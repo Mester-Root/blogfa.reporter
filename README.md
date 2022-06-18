@@ -11,7 +11,7 @@ ______________________
 
 `pkg install python3 -y`
 
-`git clone https://github.com/Mester-Root/blogfa.reporter
+`git clone https://github.com/Mester-Root/blogfa.reporter`
 
 `cd blogfa.reporter`
 
