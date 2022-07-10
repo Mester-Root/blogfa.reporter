@@ -49,12 +49,31 @@ print(banner)
 time.sleep(1)
 target = input(Fore.GREEN+'\n\nenter target blogfa'+Fore.WHITE+' _> '+Fore.RED+'')
 print()
+try:
+    ul = requests.get(f'http://{target}.blogfa.com')
+    if ul.status_code == 200:
+        print(f'\n\033[31m[+] \033[36mpage found => \033[0m@\033[92m{target}\n')
+    else:
+        print(f'\n\033[31m[!] \033[35mpage not found => \033[0m@\033[92m{target}\n')
+        time.sleep(1)
+        try:
+            exit(5)
+        except:
+            sys.exit()
+except:
+    time.sleep(1)
+    print(f'\n\033[31m[!] \033[35mserver offline\n')
+    time.sleep(1)
+    try:
+        exit(5)
+    except:
+        sys.exit()
 time.sleep(1)
-num = input(Fore.BLUE+'NUMBER FOR |REPORT| #> ')
+num = input(Fore.BLUE+'NUMBER FOR |REPORT| [#]> ')
 print()
 time.sleep(1)
 date = (datetime.datetime.today())
-print(Fore.RED+f'\n\n\n[#]: [{date}]'+Fore.BLUE+' _ '+Fore.GREEN+'>_<\n\n\n')
+print(Fore.BLUE+f'\n\n\n[#]: \033[36m[{date}]'+Fore.RED+' _ '+Fore.GREEN+'>_<\n\n\n')
 #--------------------------------------------
 
 
