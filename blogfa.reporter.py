@@ -87,9 +87,10 @@ head = {'Host':'http://blogfa.com','Content-Type':'application/x-www-form-urlenc
 # ------------------------------------------
 url = requests.get('http://blogfa.com/report-abuse/').text
 
-test = BeautifulSoup(url, 'html.parser')
+testing = BeautifulSoup(url, 'html.parser')
+test = testing.find('input')['value']
 
-data = {'_tt': test,'usrid': target,'value':'1','submit':'ارسال پیام','value':'rNp+K73LCxRezsogT08GbKEPySJNjng4QibcRxnW+CHHOefhcMUjUcbpQ4oix98gOYJ7krCFlImBsAgzxVUQ/V/q9PY=','ups': None}
+data = {'_tt': test,'usrid': target,'submit':'ارسال پیام','ups': None}
 
 json = {'lastreport': target}
 
